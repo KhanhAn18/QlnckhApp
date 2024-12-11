@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="home_form" prefHeight="635.0" prefWidth="1090.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.QLCongViecController">
+   <children>
+      <SplitPane dividerPositions="0.5" layoutX="184.0" layoutY="7.0" prefHeight="332.0" prefWidth="1050.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="10.0">
+         <items>
+            <AnchorPane>
+               <children>
+                  <AnchorPane layoutX="70.0" layoutY="56.0" prefHeight="310.0" prefWidth="460.0" stylesheets="@Dashboard.css" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <TextField fx:id="f_maDT" layoutX="52.0" layoutY="87.0" prefHeight="26.0" prefWidth="69.0" styleClass="textfield" stylesheets="@Dashboard.css" />
+                        <TextField fx:id="f_tenCV" layoutX="52.0" layoutY="148.0" prefHeight="26.0" prefWidth="328.0" styleClass="textfield" stylesheets="@Dashboard.css" />
+                        <TextField fx:id="f_stt" layoutX="174.0" layoutY="87.0" prefHeight="26.0" prefWidth="69.0" styleClass="textfield" stylesheets="@Dashboard.css" />
+                        <Label layoutX="52.0" layoutY="130.0" text="Tên công việc">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="51.0" layoutY="68.0" text="Mã đề tài">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="174.0" layoutY="68.0" text="STT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="f_ngayBD" layoutX="51.0" layoutY="216.0" prefHeight="26.0" prefWidth="142.0" styleClass="textfield" stylesheets="@Dashboard.css" />
+                        <DatePicker fx:id="f_ngayKT" layoutX="241.0" layoutY="216.0" prefHeight="26.0" prefWidth="142.0" styleClass="textfield" stylesheets="@Dashboard.css" />
+                        <Label layoutX="51.0" layoutY="198.0" text="Ngày bắt đầu ">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="241.0" layoutY="198.0" text="Ngày kết thúc">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="white-bg" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane stylesheets="@Dashboard.css">
+               <children>
+                  <AnchorPane layoutY="139.0" prefHeight="310.0" prefWidth="523.0" stylesheets="@Dashboard.css" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <Button layoutX="123.0" layoutY="140.0" mnemonicParsing="false" onAction="#gv_update" prefHeight="36.0" prefWidth="123.0" styleClass="update-btn" stylesheets="@Dashboard.css" text="Câp nhật GV" />
+                        <Button layoutX="246.0" layoutY="140.0" mnemonicParsing="false" onAction="#gv_delete" prefHeight="36.0" prefWidth="123.0" styleClass="delete-btn" stylesheets="@Dashboard.css" text="Xóa GV" />
+                        <TableView fx:id="tableGV" layoutY="175.0" onMouseClicked="#gv_select" prefHeight="134.0" prefWidth="522.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="175.99999999999997">
+                           <columns>
+                              <TableColumn fx:id="gv_maGV" prefWidth="59.20001220703125" styleClass="col-center" text="Mã GV" />
+                              <TableColumn fx:id="gv_hoTen" prefWidth="171.20001220703125" text="Họ tên" />
+                              <TableColumn fx:id="gv_phuCap" minWidth="0.0" prefWidth="86.39996337890625" styleClass="col-center" text="Phụ cấp" />
+                              <TableColumn fx:id="gv_ketQua" minWidth="0.0" prefWidth="86.39996337890625" styleClass="col-center" text="Kết quả" />
+                           </columns>
+                        </TableView>
+                        <Button layoutY="140.0" mnemonicParsing="false" onAction="#gv_insert" prefHeight="36.0" prefWidth="123.0" styleClass="add-btn" stylesheets="@Dashboard.css" text="Thêm GV" />
+                        <TextField fx:id="f_maGV" layoutX="28.0" layoutY="38.0" prefHeight="26.0" prefWidth="78.0" styleClass="textfield" stylesheets="@Dashboard.css" />
+                        <Label layoutX="28.0" layoutY="19.0" prefHeight="18.0" prefWidth="78.0" text="Mã giáo viên">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="28.0" layoutY="83.0" prefHeight="18.0" prefWidth="78.0" text="Phụ cấp">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="f_phuCap" layoutX="28.0" layoutY="100.0" prefHeight="26.0" prefWidth="150.0" styleClass="textfield" stylesheets="@Dashboard.css" />
+                        <Label layoutX="232.0" layoutY="83.0" prefHeight="18.0" prefWidth="78.0" text="Kết quả">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="f_ketQua" layoutX="232.0" layoutY="100.0" prefHeight="26.0" prefWidth="123.0" styleClass="textfield" stylesheets="@Dashboard.css" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="white-bg" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <AnchorPane layoutX="10.0" layoutY="350.0" prefHeight="374.0" prefWidth="542.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="350.0">
+         <children>
+            <TableView fx:id="tableCV" layoutX="3.0" layoutY="36.0" onMouseClicked="#cv_select" prefHeight="239.0" prefWidth="1050.0" stylesheets="@Dashboard.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="36.0">
+               <columns>
+                  <TableColumn fx:id="cv_maDT" prefWidth="63.19997596740723" styleClass="col-center" text="Mã đề tài" />
+                  <TableColumn fx:id="cv_stt" prefWidth="36.800018310546875" styleClass="col-center" text="STT" />
+                  <TableColumn fx:id="cv_tenCV" prefWidth="223.20004272460938" text="Tên công việc" />
+                  <TableColumn fx:id="cv_ngayBD" prefWidth="101.5999755859375" styleClass="col-center" text="Ngày bắt đầu" />
+                  <TableColumn fx:id="cv_ngayKT" prefWidth="100.800048828125" styleClass="col-center" text="Ngày kết thúc" />
+               </columns>
+            </TableView>
+            <Button layoutX="133.0" mnemonicParsing="false" onAction="#cv_update" prefHeight="36.0" prefWidth="123.0" styleClass="update-btn" stylesheets="@Dashboard.css" text="Cập nhật CV" />
+            <Button layoutX="256.0" mnemonicParsing="false" onAction="#cv_delete" prefHeight="36.0" prefWidth="123.0" styleClass="delete-btn" stylesheets="@Dashboard.css" text="Xóa CV" />
+            <Button layoutX="10.0" mnemonicParsing="false" onAction="#cv_insert" prefHeight="36.0" prefWidth="123.0" styleClass="add-btn" stylesheets="@Dashboard.css" text="Thêm CV" />
+            <Button layoutX="379.0" mnemonicParsing="false" onAction="#clearAll" prefHeight="36.0" prefWidth="123.0" styleClass="clear-btn" stylesheets="@Dashboard.css" text="Clear All" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
